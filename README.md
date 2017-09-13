@@ -1,6 +1,8 @@
-# vue-github-stars
+# Vue GitHub Stars
 
-> A Vue.js project
+> A Vue.js & Google Charts chart of some JavaScript front-end frameworks' GitHub stars.
+
+> http://pascalgermain.github.io/vue-github-stars/
 
 ## Build Setup
 
