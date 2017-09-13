@@ -1,28 +1,49 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
-    <hello></hello>
+    <h1>GitHub Stars</h1>
+    <chart />
   </div>
 </template>
 
 <script>
-import Hello from './components/Hello'
+import Chart from './components/Chart'
 
 export default {
-  name: 'app',
   components: {
-    Hello
+    Chart
   }
 }
 </script>
 
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  line-height: 18px;
+  background: #f0f0f0;
+  font-family: Arial, sans-serif;
+}
+
+h1 {
+  position: relative;
+  margin: 20px 0 40px;
+  padding: 0 0 20px;
+  font-size: 22px;
   text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  text-transform: uppercase;
+}
+
+h1:after {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: 70px;
+  height: 1px;
+  margin-left: -35px;
+  background: #262626;
+  content: '';
 }
 </style>
