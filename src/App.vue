@@ -2,6 +2,8 @@
   <div id="app">
     <h1>GitHub Stars</h1>
     <chart />
+    <br>
+    <chart always />
   </div>
 </template>
 
