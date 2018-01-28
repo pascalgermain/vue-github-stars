@@ -6,6 +6,8 @@
 import axios from 'axios'
 import {GoogleCharts} from 'google-charts'
 
+const apiUrl = 'http://api.captainweb.net/stars'
+
 export default {
   props: {
     always: {
@@ -14,22 +16,22 @@ export default {
   },
   computed: {
     apiUrl () {
-      return 'http://api.captainweb.net/stars' + (this.always ? '?always=1' : '')
+      return this.always ? apiUrl + '?always=1' : apiUrl
     }
   },
   methods: {
     drawChart () {
-      axios.get(this.apiUrl).then(response => {
-        const data = GoogleCharts.api.visualization.arrayToDataTable(response.data)
+      axios.get(this.apiUrl).then(({data}) => {
+        const dataTable = GoogleCharts.api.visualization.arrayToDataTable(data)
         const chart = new GoogleCharts.api.visualization.LineChart(this.$refs.chart)
         const options = {
           height: 600,
           hAxis: {title: 'Day'},
           vAxis: {title: 'Stars'}
         }
-        chart.draw(data, options)
+        chart.draw(dataTable, options)
         window.addEventListener('resize', () => {
-          chart.draw(data, options)
+          chart.draw(dataTable, options)
         }, false)
       })
     }
