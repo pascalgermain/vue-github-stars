@@ -3,6 +3,7 @@
 </template>
 
 <script>
+import axios from 'axios'
 import {GoogleCharts} from 'google-charts'
 
 export default {
@@ -11,29 +12,15 @@ export default {
       type: Boolean
     }
   },
-  data () {
-    return {
-      stats: []
-    }
-  },
   computed: {
     apiUrl () {
       return 'http://api.captainweb.net/stars' + (this.always ? '?always=1' : '')
     }
   },
   methods: {
-    fetchStats (callback) {
-      const xhr = new XMLHttpRequest()
-      xhr.open('GET', this.apiUrl)
-      xhr.onload = () => {
-        this.stats = JSON.parse(xhr.responseText)
-        if (typeof callback === 'function') callback()
-      }
-      xhr.send()
-    },
     drawChart () {
-      this.fetchStats(() => {
-        const data = GoogleCharts.api.visualization.arrayToDataTable(this.stats)
+      axios.get(this.apiUrl).then(response => {
+        const data = GoogleCharts.api.visualization.arrayToDataTable(response.data)
         const chart = new GoogleCharts.api.visualization.LineChart(this.$refs.chart)
         const options = {
           height: 600,
