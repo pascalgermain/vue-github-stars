@@ -7,16 +7,22 @@ import axios from 'axios'
 import {GoogleCharts} from 'google-charts'
 
 const apiUrl = 'http://api.captainweb.net/stars'
+const params = ['always', 'angulars', 'top3']
 
 export default {
   props: {
-    always: {
-      type: Boolean
-    }
+    ...params.reduce((previous, param) => ({
+      ...previous,
+      [param]: {type: Boolean}
+    }), {})
   },
   computed: {
     apiUrl () {
-      return this.always ? apiUrl + '?always=1' : apiUrl
+      const queryString = params
+        .filter(param => this[param])
+        .map(param => param + '=1')
+        .join('&')
+      return apiUrl + (queryString ? '?' + queryString : '')
     }
   },
   methods: {

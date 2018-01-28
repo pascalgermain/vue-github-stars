@@ -1,9 +1,21 @@
 <template>
   <div id="app">
     <h1>GitHub Stars</h1>
-    <chart />
+    <chart/>
     <br>
-    <chart always />
+    <chart always/>
+    <hr>
+    <chart angulars/>
+    <br>
+    <chart always angulars/>
+    <hr>
+    <chart top3/>
+    <br>
+    <chart always top3/>
+    <hr>
+    <chart angulars top3/>
+    <br>
+    <chart always angulars top3/>
   </div>
 </template>
 
