@@ -9,13 +9,13 @@
     <br>
     <chart always angulars/>
     <hr>
-    <chart top3/>
+    <chart top/>
     <br>
-    <chart always top3/>
+    <chart always top/>
     <hr>
-    <chart angulars top3/>
+    <chart angulars top/>
     <br>
-    <chart always angulars top3/>
+    <chart always angulars top/>
   </div>
 </template>
 

@@ -7,7 +7,7 @@ import axios from 'axios'
 import {GoogleCharts} from 'google-charts'
 
 const apiUrl = 'http://api.captainweb.net/stars'
-const params = ['always', 'angulars', 'top3']
+const params = ['always', 'angulars', 'top']
 
 export default {
   props: {
