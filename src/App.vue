@@ -1,31 +1,34 @@
 <template>
   <div id="app">
     <h1>GitHub Stars</h1>
-    <chart/>
-    <br>
-    <chart always/>
-    <hr>
-    <chart angulars/>
-    <br>
-    <chart always angulars/>
-    <hr>
-    <chart top/>
-    <br>
-    <chart always top/>
-    <hr>
-    <chart angulars top/>
-    <br>
-    <chart always angulars top/>
+    <chart />
+    <br />
+    <chart always />
+    <hr />
+    <chart angulars />
+    <br />
+    <chart angulars always />
+    <hr />
+    <chart top />
+    <br />
+    <chart top always />
+    <hr />
+    <chart top angulars />
+    <br />
+    <chart top angulars always />
+    <github-corner url="pascalgermain/vue-github-stars" color="#f0f0f0" />
   </div>
 </template>
 
 <script>
 import Chart from './components/Chart'
+import GithubCorner from './components/GithubCorner'
 
 export default {
   components: {
-    Chart
-  }
+    Chart,
+    GithubCorner,
+  },
 }
 </script>
 
