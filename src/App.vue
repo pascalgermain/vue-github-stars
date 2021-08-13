@@ -4,7 +4,7 @@
     <chart />
     <br />
     <chart always />
-    <hr />
+    <!-- <hr />
     <chart angulars />
     <br />
     <chart angulars always />
@@ -15,7 +15,7 @@
     <hr />
     <chart top angulars />
     <br />
-    <chart top angulars always />
+    <chart top angulars always /> -->
     <github-corner url="pascalgermain/vue-github-stars" color="#f0f0f0" />
   </div>
 </template>
